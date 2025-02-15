@@ -91,7 +91,7 @@ const SecondPhase = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: ${({theme})=>theme.spacing.xxl};
+    gap: ${({theme})=>theme.spacing.xxxl};
 
     margin-top: ${({theme})=>theme.spacing.xxl};
 

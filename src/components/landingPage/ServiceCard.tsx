@@ -30,13 +30,13 @@ const Card = styled.div`
   gap: ${({ theme }) => theme.spacing.medium}; // Uses theme spacing
   padding: ${({ theme }) => theme.spacing.large}; // Adds padding for better spacing
   border-radius: ${({ theme }) => theme.borderRadius.medium}; // Theme border-radius
-  box-shadow: ${({ theme }) => theme.shadows.card}; // Adds card shadow for better visibility
+  /* box-shadow: ${({ theme }) => theme.shadows.card}; // Adds card shadow for better visibility */
   background: ${({ theme }) => theme.colors.cardBg}; // Theme-based card background
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 
   &:hover {
     transform: translateY(-5px);
-    box-shadow: ${({ theme }) => theme.shadows.button}; // Adds slight lift on hover
+    /* box-shadow: ${({ theme }) => theme.shadows.button}; // Adds slight lift on hover */
   }
 `;
 

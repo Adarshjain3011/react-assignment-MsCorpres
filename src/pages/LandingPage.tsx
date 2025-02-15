@@ -6,7 +6,7 @@ import Testimonial from "../components/landingPage/Testimonial";
 import BlogSection from "../components/landingPage/BlogsSection";
 import FooterSection from "../components/layouts/Footer";
 
-import CompanySection from "../components/landingPage/ImageSection";
+import CompanySection from "../components/landingPage/CompanySection";
 
 const LandingPage = () => {
     return (

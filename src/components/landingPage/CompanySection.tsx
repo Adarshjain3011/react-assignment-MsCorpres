@@ -19,14 +19,14 @@ export default CompanySection;
 // Styled Components with Theme Integration
 const Container = styled.div`
   position: relative;
-  padding-top: ${({ theme }) => theme.spacing.xxl}; // Uses theme spacing
-  margin-top: ${({ theme }) => theme.spacing.xxl};
+  padding-top: ${({ theme }) => theme.spacing.section}; // Uses theme spacing
+  margin-top: ${({ theme }) => theme.spacing.section};
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: ${({ theme }) => theme.spacing.large}; // Theme spacing
-
+  margin-bottom: ${({ theme }) => theme.spacing.section}; // Theme spacing
   background: ${({ theme }) => theme.colors.background}; // Background from theme
 `;
 
@@ -42,8 +42,7 @@ const ImageContent = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: ${({ theme }) => theme.spacing.xxl}; // Theme spacing
-  margin-bottom: ${({ theme }) => theme.spacing.xxl}; // Theme spacing
+  gap: ${({ theme }) => theme.spacing.xxxl}; // Theme spacing
 
   img {
     width: 107px;
