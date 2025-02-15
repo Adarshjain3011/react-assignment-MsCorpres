@@ -68,6 +68,10 @@ const FirstPhase = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    font-size: x-large;
+
+    gap: 0;
+    margin-bottom: 3rem;
 
     h1{
 

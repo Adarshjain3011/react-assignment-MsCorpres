@@ -2,28 +2,30 @@ import styled from "styled-components";
 import Button from "../common/Button";
 import Para from "../common/Para";
 
+import ProjectPart from "./ProjectContent";
+
 const Hero = () => {
   return (
     <HeroSection>
       <Content>
-
         <MinContent>
-
           <Title>
             Building Brands <br /> in the <span>Digital Age</span>
           </Title>
           <Para>
             Your partner in navigating the ever-evolving landscape of digital marketing. From conceptualization to execution, we craft tailored solutions that drive results and elevate your brand to new heights.
           </Para>
-
         </MinContent>
-        <Button>Learn More</Button>
-
+        <ButtonContainer>
+          <Button>Learn More</Button>
+        </ButtonContainer>
       </Content>
       <HeroImage>
         <img src="/landing/heroSection.png" alt="Team working" />
         <ProjectCard>
-          ⭐ <strong>600+</strong> Done
+
+          <ProjectPart></ProjectPart>
+
         </ProjectCard>
       </HeroImage>
     </HeroSection>
@@ -34,10 +36,12 @@ export default Hero;
 
 const HeroSection = styled.section`
   display: flex;
-  align-items: start;
+  align-items: center;
   justify-content: space-between;
   width: 100%;
   max-width: 1200px;
+
+  margin-top: 8rem;
   margin: 0 auto;
   padding: ${({ theme }) => theme.spacing.large} 0;
   gap: ${({ theme }) => theme.spacing.xl};
@@ -49,34 +53,39 @@ const HeroSection = styled.section`
 `;
 
 const Content = styled.div`
-  max-width: 40%;
+  max-width: 45%;
   display: flex;
   flex-direction: column;
-  justify-content: start;
-  align-items: start;
-
   gap: 1rem;
-  
+
   @media (max-width: 1024px) {
     max-width: 100%;
   }
-
-
 `;
 
 const MinContent = styled.div`
-
   display: flex;
   flex-direction: column;
-
-  p{
-
-    
-  }
 `;
 
+const ButtonContainer = styled.div`
+  margin-top: 1rem;
+`;
+
+const Star = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #1d1d1d;
+`;
+
+
 const Title = styled.h1`
-  font-size: 3rem;
+  font-size: 4rem;
   font-weight: bold;
   font-family: ${({ theme }) => theme.fonts.heading};
   color: ${({ theme }) => theme.colors.textPrimary};
@@ -109,13 +118,18 @@ const ProjectCard = styled.div`
   bottom: 20px;
   right: 20px;
   background: #fff;
-  padding: ${({ theme }) => theme.spacing.small} ${({ theme }) => theme.spacing.medium};
+  padding: ${({ theme }) => theme.spacing.xs} ${({ theme }) => theme.spacing.medium};
   border-radius: ${({ theme }) => theme.borderRadius.small};
-  box-shadow: ${({ theme }) => theme.shadows.card};
-  font-size: 1rem;
-  font-weight: bold;
   display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  min-width: 120px;
 `;
 
+// const ProjectContent = styled.div`
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   text-align: center;
+// `;

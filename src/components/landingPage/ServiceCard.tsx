@@ -39,6 +39,8 @@ const Card = styled.div`
     flex-direction: column;
     gap: ${({ theme }) => theme.spacing.xs};
 
+    margin-bottom: 2rem;
+
 `
 
 const HeroImage = styled.div`
@@ -47,8 +49,11 @@ const HeroImage = styled.div`
 
     img {
 
-        width: 20px;
-        height: 20px;
+        width: 35px;
+        height: 35px;
+
+        font-weight: bold;
+
 
     }
 

@@ -16,9 +16,11 @@ const StyledButton = styled.button<{ variant: string }>`
     variant === "primary" ? "#fff" : theme.colors.textPrimary}; // Change text color
   padding: ${({ theme }) => theme.spacing.medium};
   border: none;
+
+  font-size: 1rem;
   border-radius: ${({ theme }) => theme.borderRadius.small};
   font-family: ${({ theme }) => theme.fonts.body};
-  font-weight: 600;
+  font-weight: 300;
   cursor: pointer;
   transition: background 0.3s ease, transform 0.2s ease;
 

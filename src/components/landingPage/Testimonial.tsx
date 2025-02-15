@@ -18,7 +18,7 @@ const testimonials: TestimonialData[] = [
         position: "Director of Design Operations, New York",
         company: "Power Digital",
         quote:
-            "The results have been incredible. With Power Digital, it feels like they’re in our trench, supporting and understanding us. They’re like a partner and mentor in helping us get where we want to be.",
+            `"The results have been incredible. With Power Digital, it feels like they’re in our trench, supporting and understanding us. They’re like a partner and mentor in helping us get where we want to be."`,
     },
     {
         image: "/landing/userImage.png",
@@ -26,7 +26,7 @@ const testimonials: TestimonialData[] = [
         position: "Head of Marketing, Los Angeles",
         company: "GrowthHub",
         quote:
-            "Working with Power Digital has been an amazing experience. Their insights and strategies have helped us scale our business effectively.",
+            `"Working with Power Digital has been an amazing experience. Their insights and strategies have helped us scale our business effectively."`,
     },
 ];
 
@@ -88,6 +88,10 @@ const Container = styled.div`
   padding: 1rem;
   margin: auto;
   position: relative;
+
+  margin-bottom: 8rem;
+
+  margin-top: 9rem;
 `;
 
 const Main = styled.div`
@@ -102,6 +106,10 @@ const Main = styled.div`
 const Content = styled.div`
   display: flex;
   width: 100%;
+  gap: 3rem;
+
+  justify-content: baseline;
+  align-items: start;
 `;
 
 const ImageWrapper = styled.div`
@@ -131,19 +139,22 @@ const TextWrapper = styled.div`
 `;
 
 const Quote = styled.p`
-  font-size: 1.3rem;
+  font-size: 1.8rem;
   color: #47536B;
+  
 `;
 
 const Author = styled.p`
-  font-weight: 550;
+  font-weight: 200;
   color: #47536B;
-  font-size: 1rem;
-  margin-top: 10px;
+  font-size: 1.5rem;
+  margin-top: 1rem;
+
+  padding-top: 1rem;
 
     strong {
-      font-weight: bold;
-      font-size: 1.2rem;
+      font-weight: 700;
+      font-size: 1.6rem;
     }
 `;
 

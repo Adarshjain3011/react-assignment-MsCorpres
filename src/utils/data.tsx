@@ -88,3 +88,6 @@ export const socialLinks = [
 ];
 
 
+export const ImageSectionData = ["/landing/company/clickUp.png","/landing/company/Group.png","/landing/company/segment.png", "/landing/company/github.png", "/landing/company/intiuit.png",];
+
+
