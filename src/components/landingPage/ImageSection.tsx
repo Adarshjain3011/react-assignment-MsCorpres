@@ -1,78 +1,59 @@
 import { ImageSectionData } from "../../utils/data";
-
-
 import styled from "styled-components";
 
-const CompanySection = ()=>{
-
-    return(
-
-        <Container>
-
-            <p>Powering next-gen companies</p>
-
-            <ImageContent>
-
-                {
-
-                    ImageSectionData.map((item:any, index:any)=>(
-
-                        <img src={item} alt={item.alt} />
-                    ))
-                }
-
-            </ImageContent>
-
-        </Container>
-
-    )
-}
-
+const CompanySection = () => {
+  return (
+    <Container>
+      <Title>Powering next-gen companies</Title>
+      <ImageContent>
+        {ImageSectionData.map((item: any, index: any) => (
+          <img key={index} src={item} alt={item.alt} />
+        ))}
+      </ImageContent>
+    </Container>
+  );
+};
 
 export default CompanySection;
 
-
+// Styled Components with Theme Integration
 const Container = styled.div`
+  position: relative;
+  padding-top: ${({ theme }) => theme.spacing.xxl}; // Uses theme spacing
+  margin-top: ${({ theme }) => theme.spacing.xxl};
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: ${({ theme }) => theme.spacing.large}; // Theme spacing
 
-    position: relative;
-    padding-top: 10%;
+  background: ${({ theme }) => theme.colors.background}; // Background from theme
+`;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    gap: 1rem;
-    
-    p{
-
-        text-align: center;
-        color: black;
-    }
-
+const Title = styled.p`
+  text-align: center;
+  color: ${({ theme }) => theme.colors.textPrimary}; // Primary text color from theme
+  font-size: ${({ theme }) => theme.fontSizes.large}; // Theme font size
+  font-weight: bold;
+  font-family: ${({ theme }) => theme.fonts.heading}; // Theme font
 `;
 
 const ImageContent = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: ${({ theme }) => theme.spacing.xxl}; // Theme spacing
+  margin-bottom: ${({ theme }) => theme.spacing.xxl}; // Theme spacing
 
+  img {
+    width: 107px;
+    height: auto;
+    object-fit: cover;
+    filter: grayscale(50%); // Adds a professional muted effect
+    transition: filter 0.3s ease;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 3.4rem;
-
-    margin-bottom: 8rem;
-
-    img{
-
-        width: 107px;
-
-        height: 25px;
-        object-fit: cover;
-        height: auto;
-
+    &:hover {
+      filter: grayscale(0%); // Removes grayscale on hover for effect
     }
-
-`
-
-
-
+  }
+`;

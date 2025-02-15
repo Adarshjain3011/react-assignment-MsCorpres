@@ -4,6 +4,7 @@ import './App.css';
 import LandingPage from './pages/LandingPage';
 
 import { Routes,Route } from 'react-router-dom';
+import Temp from './pages/Temp';
 
 function App() {
 
@@ -13,6 +14,8 @@ function App() {
         <Routes>
 
             <Route path='/' element={<LandingPage></LandingPage>}></Route>
+
+            <Route path='/temp' element={<Temp></Temp>}></Route>
 
         </Routes>
     </>

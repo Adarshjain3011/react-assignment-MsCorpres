@@ -10,7 +10,7 @@ import App from "./App";
 import theme from "./theme/theme.ts";
 import "./index.css";
 
-import { store } from "./redux/store.ts";
+import store from "./redux/store.ts";
 
 const queryClient = new QueryClient();
 

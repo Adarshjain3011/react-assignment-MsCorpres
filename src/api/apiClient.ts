@@ -3,11 +3,16 @@ import axios from "axios";
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 let accessToken = import.meta.env.VITE_API_ACCESS_TOKEN;
 
+console.log("base api url ",API_BASE_URL);
+
+console.log("access token",accessToken);
+
 const apiClient = axios.create({
   baseURL: API_BASE_URL,
   headers: {
     "Content-Type": "application/json",
     Authorization: `Bearer ${accessToken}`,
+    "Accept": "application/vnd.github.v3+json",  // 👈 Add this
   },
 });
 

@@ -52,10 +52,6 @@ const ServiceSection = styled.div`
 
   display: flex;
   flex-direction: column;
-  /* align-items: center;
-  justify-content: space-between; */
-
-  /* gap: ${({ theme }) => theme.spacing.small}; */
   width: 100%;
   max-width: 1200px;
 
@@ -85,7 +81,7 @@ const FirstPhase = styled.div`
 const MainContent = styled.div`
 
     display: flex;
-    gap: 2rem;
+    gap: ${({ theme }) => theme.fontSizes.xxLarge};
 
 `
 
@@ -95,9 +91,9 @@ const SecondPhase = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: ${({theme})=>theme.spacing.large};
+    gap: ${({theme})=>theme.spacing.xxl};
 
-    margin-top: 1rem;
+    margin-top: ${({theme})=>theme.spacing.xxl};
 
 `;
 

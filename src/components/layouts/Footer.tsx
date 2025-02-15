@@ -3,7 +3,7 @@ import { footerData } from "../../utils/data";
 
 import { socialLinks } from "../../utils/data";
 import { FaTwitter, FaFacebook, FaInstagram } from "react-icons/fa";
-import Para from "../common/Para";
+
 
 const FooterSection = () => {
     return (

@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import Button from "../common/Button";
 import Para from "../common/Para";
-
 import ProjectPart from "./ProjectContent";
 
 const Hero = () => {
@@ -23,9 +22,7 @@ const Hero = () => {
       <HeroImage>
         <img src="/landing/heroSection.png" alt="Team working" />
         <ProjectCard>
-
-          <ProjectPart></ProjectPart>
-
+          <ProjectPart />
         </ProjectCard>
       </HeroImage>
     </HeroSection>
@@ -34,17 +31,16 @@ const Hero = () => {
 
 export default Hero;
 
+// Styled Components
 const HeroSection = styled.section`
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
   max-width: 1200px;
-
-  margin-top: 8rem;
   margin: 0 auto;
-  padding: ${({ theme }) => theme.spacing.large} 0;
-  gap: ${({ theme }) => theme.spacing.xl};
+  padding: ${({ theme }) => theme.spacing.xl} 0;
+  gap: ${({ theme }) => theme.spacing.xxl};
 
   @media (max-width: 1024px) {
     flex-direction: column;
@@ -56,7 +52,7 @@ const Content = styled.div`
   max-width: 45%;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: ${({ theme }) => theme.spacing.large}; // Theme-based spacing
 
   @media (max-width: 1024px) {
     max-width: 100%;
@@ -66,27 +62,25 @@ const Content = styled.div`
 const MinContent = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: ${({ theme }) => theme.spacing.large}; // Ensures spacing consistency
 `;
 
 const ButtonContainer = styled.div`
-  margin-top: 1rem;
+  margin-top: ${({ theme }) => theme.spacing.medium}; // Adjusted for consistency
 `;
 
-
-
 const Title = styled.h1`
-  font-size: 4rem;
+  font-size: 4rem; // Uses theme font sizes
   font-weight: bold;
   font-family: ${({ theme }) => theme.fonts.heading};
-  color: ${({ theme }) => theme.colors.textPrimary};
+  color: ${({ theme }) => theme.colors.headColor}; // Uses dark heading color
 
   span {
-    color: ${({ theme }) => theme.colors.accent};
+    color: ${({ theme }) => theme.colors.accent}; // Uses accent color for emphasis
   }
 
   @media (max-width: 768px) {
-    font-size: 2.5rem;
+    font-size: ${({ theme }) => theme.fontSizes.xLarge}; // Responsive font size
   }
 `;
 
@@ -96,7 +90,8 @@ const HeroImage = styled.div`
 
   img {
     width: 100%;
-    border-radius: ${({ theme }) => theme.borderRadius.large};
+    border-radius: ${({ theme }) => theme.borderRadius.large}; // Theme-based border radius
+    box-shadow: ${({ theme }) => theme.shadows.card}; // Adds a subtle shadow effect
   }
 
   @media (max-width: 1024px) {
@@ -108,13 +103,12 @@ const ProjectCard = styled.div`
   position: absolute;
   bottom: 20px;
   right: 20px;
-  background: #fff;
+  background: ${({ theme }) => theme.colors.background}; // Uses theme background
   padding: ${({ theme }) => theme.spacing.xs} ${({ theme }) => theme.spacing.medium};
   border-radius: ${({ theme }) => theme.borderRadius.small};
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: ${({ theme }) => theme.shadows.card}; // Consistent shadow effect
   min-width: 120px;
 `;
-
