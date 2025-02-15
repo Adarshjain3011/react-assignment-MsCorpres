@@ -66,22 +66,13 @@ const Content = styled.div`
 const MinContent = styled.div`
   display: flex;
   flex-direction: column;
+  gap: 1.5rem;
 `;
 
 const ButtonContainer = styled.div`
   margin-top: 1rem;
 `;
 
-const Star = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 5px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  color: #1d1d1d;
-`;
 
 
 const Title = styled.h1`
@@ -127,9 +118,3 @@ const ProjectCard = styled.div`
   min-width: 120px;
 `;
 
-// const ProjectContent = styled.div`
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   text-align: center;
-// `;

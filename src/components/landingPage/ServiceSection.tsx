@@ -70,7 +70,7 @@ const FirstPhase = styled.div`
     justify-content: center;
     font-size: x-large;
 
-    gap: 0;
+    gap: 1.2rem;
     margin-bottom: 3rem;
 
     h1{
@@ -95,8 +95,9 @@ const SecondPhase = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: ${({theme})=>theme.spacing.small};
+    gap: ${({theme})=>theme.spacing.large};
 
+    margin-top: 1rem;
 
 `;
 

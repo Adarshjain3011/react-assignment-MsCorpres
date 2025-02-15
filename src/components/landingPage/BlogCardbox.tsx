@@ -12,7 +12,7 @@ const BlogCardBox = ({ title, description }: BlogCardBoxProps) => {
     <Container>
       <Card>
         <Title>{title}</Title>
-        <Para>{description}</Para>
+        <p>{description}</p>
         <ArrowWrapper>
           <FaArrowRight />
         </ArrowWrapper>
@@ -31,19 +31,28 @@ const Container = styled.div`
 const Card = styled.div`
   display: flex;
   flex-direction: column;
-  width: 80%;
+  width: 90%;
   background-color: white;
 
   padding: 0 ${({ theme }) => theme.spacing.lg}; // Only horizontal padding (left & right)
   transform: translate(50px, -5rem);
 
+  padding: 1rem;
+
+  padding-right: 2.5rem;
   // Minimizing the spacing
   gap: 4px; // Reducing gap between title & description
+
+  p{
+
+    color: #0F0049;
+    opacity: 36%;
+  }
 `;
 
-const Title = styled.h1`
-  font-size: 2rem;
-  font-weight: 400;
+const Title = styled.h2`
+  font-weight: 500;
+  font-size: 1.8rem;
   color: ${({ theme }) => theme.colors.headColor};
   margin-bottom: 2px; // Slightly reduce bottom margin
 `;
@@ -55,7 +64,7 @@ const ArrowWrapper = styled.div`
   width: 100%;
   margin-top: auto; // Pushes it to bottom with minimal spacing
   padding: 5px 0; // Reduce padding
-
+  padding-top: 10px;
   svg {
     font-size: 1.4rem;
     color: ${({ theme }) => theme.colors.primaryColor};

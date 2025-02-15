@@ -37,9 +37,11 @@ const Card = styled.div`
 
     display: flex;
     flex-direction: column;
-    gap: ${({ theme }) => theme.spacing.xs};
+    gap: ${({ theme }) => theme.spacing.medium};
 
     margin-bottom: 2rem;
+
+
 
 `
 
@@ -62,7 +64,7 @@ const HeroImage = styled.div`
 const Heading = styled.h1`
     
     font-size: 1.5rem;
-    font-weight: bold;
+    font-weight: 500;
     /* font-family: ${({ theme }) => theme.fonts.heading}; */
     color: ${({ theme }) => theme.colors.headColor};
 `

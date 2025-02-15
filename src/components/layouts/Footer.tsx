@@ -13,7 +13,7 @@ const FooterSection = () => {
 
                 <LeftSection>
                     <h3>Digital agency</h3>
-                    <Para variant="primary">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dictum aliquet accumsan porta lectus ridiculus in mattis. Netus sodales in volutpat ullamcorper amet adipiscing fermentum.</Para>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam dictum aliquet accumsan porta lectus ridiculus in mattis. Netus sodales in volutpat ullamcorper amet adipiscing fermentum.</p>
                     <SocialIcons>
                         {socialLinks.map((item: any) => (
                             <a key={item.id} href={item.url}>
@@ -69,12 +69,18 @@ const Main = styled.div`
     justify-content: space-between;
     align-items: center;
 
+    padding-top: 3rem;
 
 `;
 
 
 const LeftSection = styled.div`
   width: 30%;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 1.3rem;
   
   h3 {
     font-size: 1.5rem;
@@ -82,15 +88,18 @@ const LeftSection = styled.div`
   }
 
   p {
-    font-size: 0.9rem;
-    line-height: 1.5;
+    font-size: 1rem;
+    color: white;
+    font-weight:100;
+    opacity: 90%;
   }
 `;
 
 const SocialIcons = styled.div`
   margin-top: 10px;
   display: flex;
-  gap: 10px;
+  gap: 2rem;
+
 
   a {
     color: white;
@@ -108,10 +117,13 @@ const FooterColumn = styled.div`
   display: flex;
   flex-direction: column;
 
+  gap: 1rem;
+
   h4 {
-    font-size: 1rem;
+    font-size: 1.3rem;
     margin-bottom: 10px;
-    font-weight: 200;
+    font-weight: 600;
+    
   }
 
   ul {
@@ -124,7 +136,7 @@ const FooterColumn = styled.div`
     li {
       margin-bottom: 8px;
       font-size: 0.9rem;
-      font-weight: 100;
+      font-weight: 400;
     }
   }
 `;

@@ -26,17 +26,17 @@ const ProjectContent = styled.div`
   align-items: center;
   text-align: center;
   border-radius: 20px;
-  height: 70px;
-
   position: absolute;
-
+    gap: 5px;
   padding: 5px;
 
   margin-top: 1rem;
 
-  padding-left: 40px;
-  padding-right: 40px;
+  padding-left: 30px;
+  padding-right: 30px;
 
+  padding-top: 15px;
+  padding-bottom: 15px;
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 
@@ -46,15 +46,11 @@ const ProjectContent = styled.div`
 
 const ProjectNumber = styled.div`
   display: flex;
-  /* flex-direction: column; */
+
   justify-content: center;
   align-items: center;
 
-  top: 10px;
-    
-  position: absolute;
-
-  margin-top: 10px;
+  gap: 3px;
 
   h3 {
     color: #1d1d1d;
