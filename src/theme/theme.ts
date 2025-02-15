@@ -23,7 +23,9 @@ export const theme: DefaultTheme = {
     medium: "16px",
     large: "24px",
     xl: "32px",
+    lg:"1rem",
   },
+
   borderRadius: {
     small: "6px",
     medium: "12px",

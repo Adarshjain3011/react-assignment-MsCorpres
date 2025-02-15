@@ -1,42 +1,80 @@
+import { useState } from "react";
 import styled from "styled-components";
 import { FaQuoteLeft } from "react-icons/fa";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa6";
 
-interface TestimonialProps {
-  image: string;
-  name: string;
-  position: string;
-  company: string;
-  quote: string;
+interface TestimonialData {
+    image: string;
+    name: string;
+    position: string;
+    company: string;
+    quote: string;
 }
 
-const Testimonial = ({ image, name, position, quote }: TestimonialProps) => {
-  return (
-    <Container>
-      <QuoteIcon>
-        <FaQuoteLeft size={40} />
-      </QuoteIcon>
-      <Content>
-        <ImageWrapper>
-          <Image src={image} alt={name} />
-        </ImageWrapper>
-        <TextWrapper>
-          <Quote>{quote}</Quote>
-          <Author>
-            <strong>{name}</strong> – {position}
-          </Author>
-        </TextWrapper>
-      </Content>
-      <Navigation>
-        <ArrowButton>
-          <FaArrowLeft />
-        </ArrowButton>
-        <ArrowButton>
-          <FaArrowRight />
-        </ArrowButton>
-      </Navigation>
-    </Container>
-  );
+const testimonials: TestimonialData[] = [
+    {
+        image: "/landing/userImage.png", // Replace with actual image
+        name: "David Calathan",
+        position: "Director of Design Operations, New York",
+        company: "Power Digital",
+        quote:
+            "The results have been incredible. With Power Digital, it feels like they’re in our trench, supporting and understanding us. They’re like a partner and mentor in helping us get where we want to be.",
+    },
+    {
+        image: "/landing/userImage.png",
+        name: "Emily Parker",
+        position: "Head of Marketing, Los Angeles",
+        company: "GrowthHub",
+        quote:
+            "Working with Power Digital has been an amazing experience. Their insights and strategies have helped us scale our business effectively.",
+    },
+];
+
+const Testimonial = () => {
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    const handlePrev = () => {
+        setCurrentIndex((prevIndex) =>
+            prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1
+        );
+    };
+
+    const handleNext = () => {
+        setCurrentIndex((prevIndex) =>
+            prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
+        );
+    };
+
+    const { image, name, position, quote } = testimonials[currentIndex];
+
+    return (
+        <Container>
+            <Main>
+                <Content>
+                    <ImageWrapper>
+                        <QuoteIcon>
+                            <FaQuoteLeft size={30} />
+                        </QuoteIcon>
+                        <Image src={image} alt={name} />
+                    </ImageWrapper>
+                    <TextWrapper>
+                        <Quote>{quote}</Quote>
+                        <Author>
+                            <strong>{name}</strong> – {position}
+                        </Author>
+                    </TextWrapper>
+                </Content>
+                <Arrows>
+                    <ArrowButton onClick={handlePrev}>
+                        <FaArrowLeft />
+                    </ArrowButton>
+                    <ArrowButton onClick={handleNext}>
+                        <FaArrowRight />
+                    </ArrowButton>
+                </Arrows>
+            </Main>
+        </Container>
+    );
 };
 
 export default Testimonial;
@@ -44,62 +82,69 @@ export default Testimonial;
 // Styled Components
 const Container = styled.div`
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  padding-top: 5rem;
   width: 100%;
-  max-width: 900px;
+  padding: 1rem;
   margin: auto;
-  text-align: left;
-  padding: 20px;
   position: relative;
 `;
 
-const QuoteIcon = styled.div`
-  position: absolute;
-  left: -10px;
-  top: -10px;
-  color: ${({ theme }) => theme.colors.primary};
+const Main = styled.div`
+  display: flex;
+  position: relative;
+  max-width: 1200px;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
 `;
 
 const Content = styled.div`
   display: flex;
-  align-items: center;
-  gap: 20px;
+  width: 100%;
 `;
 
 const ImageWrapper = styled.div`
-  border: 3px solid ${({ theme }) => theme.colors.primary};
-  padding: 5px;
-  display: inline-block;
+  position: relative;
+  display: flex;
+  align-items: center;
+`;
+
+const QuoteIcon = styled.div`
+  position: absolute;
+  top: -30px;
+  left: -60px;
+  color: #000;
 `;
 
 const Image = styled.img`
-  width: 100px;
-  height: 100px;
+  width: 304px;
+  height: 450px;
   object-fit: cover;
   border-radius: 5px;
 `;
 
 const TextWrapper = styled.div`
   flex: 1;
+  text-align: left;
+  margin-left: 20px;
 `;
 
 const Quote = styled.p`
-  font-size: 1rem;
-  color: ${({ theme }) => theme.colors.text};
+  font-size: 1.3rem;
+  color: #47536B;
 `;
 
 const Author = styled.p`
-  font-size: 0.9rem;
-  font-weight: bold;
-  color: ${({ theme }) => theme.colors.text};
-`;
+  font-weight: 550;
+  color: #47536B;
+  font-size: 1rem;
+  margin-top: 10px;
 
-const Navigation = styled.div`
-  display: flex;
-  gap: 10px;
-  margin-top: 20px;
+    strong {
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
 `;
 
 const ArrowButton = styled.button`
@@ -107,8 +152,16 @@ const ArrowButton = styled.button`
   border: none;
   cursor: pointer;
   font-size: 1.5rem;
-  color: ${({ theme }) => theme.colors.text};
+  color: #666;
   &:hover {
-    color: ${({ theme }) => theme.colors.primary};
+    color: #000;
   }
+`;
+
+const Arrows = styled.div`
+  display: flex;
+  gap: 15px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
 `;

@@ -1,22 +1,24 @@
 import styled from "styled-components";
-
 import Button from "../common/Button";
-
-
 import Para from "../common/Para";
 
 const Hero = () => {
   return (
     <HeroSection>
       <Content>
-        <Title>
-          Building Brands <br /> in the <span>Digital Age</span>
-        </Title>
-        <Para>
-          Your partner in navigating the ever-evolving landscape of digital marketing. From conceptualization to execution, we craft tailored solutions that drive results and elevate your brand to new heights.
-        </Para>
+
+        <MinContent>
+
+          <Title>
+            Building Brands <br /> in the <span>Digital Age</span>
+          </Title>
+          <Para>
+            Your partner in navigating the ever-evolving landscape of digital marketing. From conceptualization to execution, we craft tailored solutions that drive results and elevate your brand to new heights.
+          </Para>
+
+        </MinContent>
         <Button>Learn More</Button>
-        
+
       </Content>
       <HeroImage>
         <img src="/landing/heroSection.png" alt="Team working" />
@@ -32,7 +34,7 @@ export default Hero;
 
 const HeroSection = styled.section`
   display: flex;
-  align-items: center;
+  align-items: start;
   justify-content: space-between;
   width: 100%;
   max-width: 1200px;
@@ -47,13 +49,29 @@ const HeroSection = styled.section`
 `;
 
 const Content = styled.div`
-  max-width: 34%;
+  max-width: 40%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: start;
   align-items: start;
+
+  gap: 1rem;
+  
   @media (max-width: 1024px) {
     max-width: 100%;
+  }
+
+
+`;
+
+const MinContent = styled.div`
+
+  display: flex;
+  flex-direction: column;
+
+  p{
+
+    
   }
 `;
 
@@ -71,8 +89,6 @@ const Title = styled.h1`
     font-size: 2.5rem;
   }
 `;
-
-
 
 const HeroImage = styled.div`
   position: relative;
@@ -102,3 +118,4 @@ const ProjectCard = styled.div`
   align-items: center;
   gap: 8px;
 `;
+
