@@ -5,10 +5,12 @@ import { BrowserRouter } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Provider } from "react-redux";
-import { Store } from "@reduxjs/toolkit";
+
 import App from "./App";
 import theme from "./theme/theme.ts";
 import "./index.css";
+
+import { store } from "./redux/store.ts";
 
 const queryClient = new QueryClient();
 
