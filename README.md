@@ -26,6 +26,16 @@ This project consists of two main tasks:
 
 ---
 
+Images -->
+
+![image](https://github.com/user-attachments/assets/5f0e891d-e564-4c4d-b4c3-9df29dace6d8)
+![image](https://github.com/user-attachments/assets/22491d5a-db3b-48c4-bbd0-3deef5716e4b)
+![image](https://github.com/user-attachments/assets/151746ed-77b6-46de-90fb-7e36e3e130f9)
+![image](https://github.com/user-attachments/assets/d1ab3814-ae96-4b3c-b2a1-074849b5e8f0)
+![image](https://github.com/user-attachments/assets/7f25086c-c5a9-46d2-8460-225812eb0e14)
+
+
+
 ## Task 2: API Fetching with Client-side Caching
 - **File:** `src/pages/Temp.tsx`
 - **Description:** This component fetches and displays GitHub repositories based on user input.
@@ -42,6 +52,10 @@ This project consists of two main tasks:
 - **Client-side Caching**: Ensures faster subsequent API requests.
 
 ---
+
+Task 2 Images ->
+![image](https://github.com/user-attachments/assets/436b679a-6345-4482-9f25-1617eeb10818)
+
 
 ## Project Structure
 ```
@@ -85,7 +99,7 @@ my-project/
    ```bash
    npm run dev
    ```
-4. Open `http://localhost:3000` in your browser.
+4. Open `http://localhost:5173` in your browser.
 
 ---
 
@@ -95,20 +109,5 @@ Run Jest test cases:
 npm test
 ```
 
----
 
-## Future Improvements
-- Implement better UI animations.
-- Enhance caching strategy with IndexedDB for persistence.
-- Improve authentication handling with OAuth login.
-
----
-
-## Contributors
-- **Your Name** (Developer)
-
----
-
-## License
-This project is licensed under the MIT License.
 
