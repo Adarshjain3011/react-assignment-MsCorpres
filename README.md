@@ -1,50 +1,114 @@
-# React + TypeScript + Vite
+# Project Overview
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project consists of two main tasks:
 
-Currently, two official plugins are available:
+1. **Task 1:** Implement a Landing Page based on a provided Figma design.
+2. **Task 2:** Create a route that fetches data from an external API with client-side caching and proper error handling.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technologies Used
+- React (TypeScript)
+- Styled Components (Theme-based styling)
+- React Router
+- Jest (Testing)
+- Axios / React Query (Data fetching & Caching)
+- Redux / XState (State management)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Task 1: Landing Page
+- **File:** `src/pages/LandingPage.tsx`
+- **Design:** The Landing Page is implemented using Styled Components and follows a headless UI approach.
+- **Features:**
+  - Uses a `theme.ts` file for consistent styling.
+  - Components are structured for reuse and maintainability.
+  - The page is integrated into the app via React Router.
+  - Jest test cases are written for component validation.
 
-- Configure the top-level `parserOptions` property like this:
+---
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Task 2: API Fetching with Client-side Caching
+- **File:** `src/pages/Temp.tsx`
+- **Description:** This component fetches and displays GitHub repositories based on user input.
+- **Features:**
+  - Uses **React Query** / Axios for fetching data from an external REST API.
+  - Implements **client-side caching** to store API responses, reducing unnecessary network requests.
+  - Handles authentication errors (401 Unauthorized) and token expiration.
+  - Uses Redux / XState for rendering fetched data in a headless UI manner.
+  
+### Key Code Elements:
+- **Styled Components**: The UI is built using `styled-components`.
+- **React State Management**: `useState` is used for handling user input.
+- **API Request Handling**: Fetching repositories using `RepoList.tsx` component.
+- **Client-side Caching**: Ensures faster subsequent API requests.
+
+---
+
+## Project Structure
+```
+my-project/
+├── public/                  # Public assets
+├── src/
+│   ├── api/                 # API calls
+│   ├── components/          # Reusable UI components
+│   ├── hooks/               # Custom hooks
+│   ├── pages/               # LandingPage.tsx (Task 1), Temp.tsx (Task 2)
+│   ├── redux/               # State management
+│   ├── theme/               # Theme configuration
+│   ├── utils/               # Utility functions
+│   ├── App.tsx              # Main App component
+│   ├── index.tsx            # Entry point
+│
+├── .env                     # Environment variables
+├── package.json             # Dependencies and scripts
+├── README.md                # Project documentation
+└── ...
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+---
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Setup Instructions
+### Prerequisites
+- Node.js installed
+- GitHub API token (if required)
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+### Installation Steps
+1. Clone the repository:
+   ```bash
+   git clone <repo-url>
+   cd my-project
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Run the development server:
+   ```bash
+   npm run dev
+   ```
+4. Open `http://localhost:3000` in your browser.
+
+---
+
+## Testing
+Run Jest test cases:
+```bash
+npm test
 ```
+
+---
+
+## Future Improvements
+- Implement better UI animations.
+- Enhance caching strategy with IndexedDB for persistence.
+- Improve authentication handling with OAuth login.
+
+---
+
+## Contributors
+- **Your Name** (Developer)
+
+---
+
+## License
+This project is licensed under the MIT License.
+
