@@ -59,29 +59,43 @@ const ServiceSection = styled.div`
 
 
 const FirstPhase = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: x-large;
+  gap: 1.2rem;
+  margin-bottom: 3rem;
 
-    display: flex;
+  h1 {
+    color: ${({ theme }) => theme.colors.headColor};
+    font-size: 3rem; /* Default h1 size */
+  }
+
+  @media screen and (max-width: 700px) {
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: x-large;
+    gap: 1.5rem;
+    height: 200px; /* Example height for smaller screens */
 
-    gap: 1.2rem;
-    margin-bottom: 3rem;
-
-    h1{
-
-
-        color: ${({ theme }) => theme.colors.headColor};
-
+    h1 {
+      font-size: 2rem; /* Minimized h1 text size */
     }
+  }
 `;
+
 
 
 const MainContent = styled.div`
 
     display: flex;
+    width: 100%;
     gap: ${({ theme }) => theme.fontSizes.xxLarge};
+
+    @media screen and (max-width: 750px){
+
+        flex-direction: column;
+        gap: 1.5rem;
+    }
 
 `
 
@@ -91,9 +105,9 @@ const SecondPhase = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: ${({theme})=>theme.spacing.xxxl};
+    gap: ${({ theme }) => theme.spacing.xxxl};
 
-    margin-top: ${({theme})=>theme.spacing.xxl};
+    margin-top: ${({ theme }) => theme.spacing.xxl};
 
 `;
 

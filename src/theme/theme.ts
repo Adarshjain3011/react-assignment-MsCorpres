@@ -6,7 +6,7 @@ export const theme: DefaultTheme = {
     primaryHover: "#4F46E5", // Hover state for primary color
     secondary: "#F5F5F5", // Light gray background
     accent: "#6153CD", // Alternative accent color (button bg)
-    textPrimary: "#2D3748", // Dark text (headings)
+    textPrimary: "#2D3748", // Dark text (headings)ch
     textSecondary: "#47536B", // Navy blue text (paragraphs)
     headColor: "#0F0049", // Extra dark color for headings
     background: "#FFFFFF", // White background

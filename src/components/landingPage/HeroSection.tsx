@@ -1,114 +1,109 @@
 import styled from "styled-components";
 import Button from "../common/Button";
-import Para from "../common/Para";
-import ProjectPart from "./ProjectContent";
 
-const Hero = () => {
+const Navbar = () => {
   return (
-    <HeroSection>
-      <Content>
-        <MinContent>
-          <Title>
-            Building Brands <br /> in the <span>Digital Age</span>
-          </Title>
-          <Para>
-            Your partner in navigating the ever-evolving landscape of digital marketing. From conceptualization to execution, we craft tailored solutions that drive results and elevate your brand to new heights.
-          </Para>
-        </MinContent>
-        <ButtonContainer>
-          <Button>Learn More</Button>
-        </ButtonContainer>
-      </Content>
-      <HeroImage>
-        <img src="/landing/heroSection.png" alt="Team working" />
-        <ProjectCard>
-          <ProjectPart />
-        </ProjectCard>
-      </HeroImage>
-    </HeroSection>
+    <Nav>
+      <Company>
+        <img src="/landing/company-logo.png" alt="Company Logo" />
+        <Logo>Digital Agency</Logo>
+      </Company>
+
+      <NavItems>
+        <NavLinks>
+          <NavLink href="#">About</NavLink>
+          <NavLink href="#">Services</NavLink>
+          <NavLink href="#">Projects</NavLink>
+        </NavLinks>
+        <Button variant="primary" onClick={() => console.log("Clicked")}>
+          Get in Touch
+        </Button>
+      </NavItems>
+    </Nav>
   );
 };
 
-export default Hero;
+export default Navbar;
 
 // Styled Components
-const HeroSection = styled.section`
+
+const Nav = styled.nav`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: ${({ theme }) => theme.spacing.medium};
+  background: ${({ theme }) => theme.colors.navbarBg};
+  margin-bottom: ${({ theme }) => theme.spacing.xl};
+  border-radius: ${({ theme }) => theme.borderRadius.small};
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    padding: ${({ theme }) => theme.spacing.small};
+    gap: ${({ theme }) => theme.spacing.medium};
+  }
+`;
+
+const Company = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: ${({ theme }) => theme.spacing.xl} 0;
-  gap: ${({ theme }) => theme.spacing.xxl};
-
-  @media (max-width: 1024px) {
-    flex-direction: column;
-    text-align: center;
-  }
-`;
-
-const Content = styled.div`
-  max-width: 45%;
-  display: flex;
-  flex-direction: column;
-  gap: ${({ theme }) => theme.spacing.large}; // Theme-based spacing
-
-  @media (max-width: 1024px) {
-    max-width: 100%;
-  }
-`;
-
-const MinContent = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: ${({ theme }) => theme.spacing.large}; // Ensures spacing consistency
-`;
-
-const ButtonContainer = styled.div`
-  margin-top: ${({ theme }) => theme.spacing.medium}; // Adjusted for consistency
-`;
-
-const Title = styled.h1`
-  font-size: 4rem; // Uses theme font sizes
-  font-weight: bold;
-  font-family: ${({ theme }) => theme.fonts.heading};
-  color: ${({ theme }) => theme.colors.headColor}; // Uses dark heading color
-
-  span {
-    color: ${({ theme }) => theme.colors.accent}; // Uses accent color for emphasis
-  }
-
-  @media (max-width: 768px) {
-    font-size: ${({ theme }) => theme.fontSizes.xLarge}; // Responsive font size
-  }
-`;
-
-const HeroImage = styled.div`
-  position: relative;
-  max-width: 50%;
+  gap: ${({ theme }) => theme.spacing.small};
 
   img {
-    width: 100%;
-    border-radius: ${({ theme }) => theme.borderRadius.large}; // Theme-based border radius
-    box-shadow: ${({ theme }) => theme.shadows.card}; // Adds a subtle shadow effect
+    width: 50px;
+    height: auto;
   }
 
-  @media (max-width: 1024px) {
-    max-width: 100%;
+  @media screen and (max-width: 768px) {
+    img {
+      width: 40px;
+    }
   }
 `;
 
-const ProjectCard = styled.div`
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  background: ${({ theme }) => theme.colors.background}; // Uses theme background
-  padding: ${({ theme }) => theme.spacing.xs} ${({ theme }) => theme.spacing.medium};
-  border-radius: ${({ theme }) => theme.borderRadius.small};
+const Logo = styled.div`
+  font-size: ${({ theme }) => theme.fontSizes.large};
+  font-weight: bold;
+  font-family: ${({ theme }) => theme.fonts.heading};
+  color: ${({ theme }) => theme.colors.headColor};
+
+  @media screen and (max-width: 768px) {
+    font-size: ${({ theme }) => theme.fontSizes.medium};
+  }
+`;
+
+const NavLinks = styled.div`
   display: flex;
-  justify-content: center;
+  gap: ${({ theme }) => theme.spacing.large};
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    gap: ${({ theme }) => theme.spacing.small};
+  }
+`;
+
+const NavLink = styled.a`
+  font-size: ${({ theme }) => theme.fontSizes.medium};
+  text-decoration: none;
+  color: ${({ theme }) => theme.colors.textPrimary};
+  font-family: ${({ theme }) => theme.fonts.body};
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: ${({ theme }) => theme.colors.primaryHover};
+  }
+
+  @media screen and (max-width: 768px) {
+    font-size: ${({ theme }) => theme.fontSizes.small};
+  }
+`;
+
+const NavItems = styled.div`
+  display: flex;
   align-items: center;
-  box-shadow: ${({ theme }) => theme.shadows.card}; // Consistent shadow effect
-  min-width: 120px;
+  gap: ${({ theme }) => theme.spacing.xl};
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    gap: ${({ theme }) => theme.spacing.small};
+  }
 `;

@@ -17,7 +17,6 @@ const BlogSection = () => {
           />
         ))}
       </Blogs>
-
       <ButtonSection>
         <Button>View All Post</Button>
       </ButtonSection>
@@ -27,41 +26,68 @@ const BlogSection = () => {
 
 export default BlogSection;
 
-// Styled Components with Theme Integration
 const Container = styled.div`
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: ${({ theme }) => theme.spacing.medium};
-  justify-content: start;
-  align-items: start;
-  padding-top: ${({ theme }) => theme.spacing.large};
-  padding-left: ${({ theme }) => theme.spacing.medium};
-  padding-right: ${({ theme }) => theme.spacing.medium};
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: ${({ theme }) => theme.spacing.large} ${({ theme }) => theme.spacing.medium};
   margin-bottom: 25rem !important;
-  
+
+  @media screen and (max-width: 768px) {
+    align-items: center;
+    text-align: center;
+    padding: ${({ theme }) => theme.spacing.medium};
+    margin-bottom: ${({ theme }) => theme.spacing.xxl};
+  }
+
+  @media screen and (max-width: 480px) {
+    padding: ${({ theme }) => theme.spacing.small};
+    margin-bottom: ${({ theme }) => theme.spacing.large};
+  }
 `;
 
 const Title = styled.h1`
   font-size: ${({ theme }) => theme.fontSizes.xxLarge};
   text-align: start;
   color: ${({ theme }) => theme.colors.headColor};
+
+  @media screen and (max-width: 768px) {
+    font-size: ${({ theme }) => theme.fontSizes.xLarge};
+    text-align: center;
+  }
+
+  @media screen and (max-width: 480px) {
+    font-size: ${({ theme }) => theme.fontSizes.large};
+  }
 `;
 
 const Blogs = styled.div`
   display: flex;
   flex-wrap: wrap;
-  position: relative;
   justify-content: space-between;
   width: 100%;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    gap: ${({ theme }) => theme.spacing.medium};
+  }
 `;
 
 const ButtonSection = styled.div`
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   margin-bottom: ${({ theme }) => theme.spacing.xxl};
+
+  @media screen and (max-width: 768px) {
+    margin-bottom: ${({ theme }) => theme.spacing.large};
+  }
+
+  @media screen and (max-width: 480px) {
+    margin-bottom: ${({ theme }) => theme.spacing.medium};
+  }
 `;
-
-
