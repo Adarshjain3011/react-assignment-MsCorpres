@@ -15,7 +15,15 @@
     "noFallthroughCasesInSwitch": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "types": ["vite/client"]
+    "types": ["vite/client"],
+    "strictNullChecks": true,
+    "allowImportingTsExtensions": false,
+    "baseUrl": "./src",
+    "paths": {
+      "@/*": ["*"]
+    },
+    "rootDir": "./src",
+    "outDir": "./dist"
   },
   "include": ["src"]
 }

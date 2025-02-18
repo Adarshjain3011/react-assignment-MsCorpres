@@ -7,10 +7,11 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Provider } from "react-redux";
 
 import App from "./App";
-import theme from "./theme/theme.ts";
+import theme from "./theme/theme";
+
 import "./index.css";
 
-import store from "./redux/store.ts";
+import store from "./redux/store";
 
 const queryClient = new QueryClient();
 
