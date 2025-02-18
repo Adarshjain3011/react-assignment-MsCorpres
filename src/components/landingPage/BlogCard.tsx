@@ -21,16 +21,16 @@ const BlogCard = ({ title, description, image }: BlogCardProps) => {
 export default BlogCard;
 
 const Container = styled.div`
-  width: 100%; // Adjust width as per design requirements
-  max-width: 366px; // Example max-width for better control
+  width: 100%; 
+  max-width: 366px;
   height: auto;
   display: flex;
   flex-direction: column;
   gap: 10px;
 
-  /* padding: ${({theme})=>theme.spacing.sm}; */
-
-
+  @media screen and (max-width: 768px) {
+    max-width: 100%; 
+  }
 `;
 
 const HyperImage = styled.div`
@@ -41,7 +41,7 @@ const HyperImage = styled.div`
 
   img {
     width: 100%;
-    height: auto; // Maintain aspect ratio
+    height: auto; /* Maintain aspect ratio */
     object-fit: cover;
     border-radius: 8px;
   }
